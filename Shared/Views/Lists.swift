@@ -49,6 +49,6 @@ struct Lists: View {
 struct Lists_Previews: PreviewProvider {
     static var previews: some View {
         Lists()
-            .environmentObject(ModelData())
+            .environmentObject(ModelData.debug)
     }
 }

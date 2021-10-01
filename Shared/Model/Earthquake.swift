@@ -11,14 +11,20 @@ import SwiftUI
 
 // Model for Earthquake data derived from GeoJSON format defined by the USGS
 // here: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
-struct Earthquake: Decodable, Identifiable {
+struct Earthquake: Identifiable {
     var id: UUID
     var title: String
     var place: String
     var date: Date
     var mag: Float
     var urlString: String
+    
     var location: Coordinates
+    struct Coordinates: Codable {
+        var longitude: Float
+        var latitude: Float
+        var depth: Float
+    }
     
     var locationCoordinates: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: Double(location.latitude),
@@ -78,7 +84,9 @@ struct Earthquake: Decodable, Identifiable {
             ]
         }
     }
+}
 
+extension Earthquake: Decodable {
     enum CodingKeys: String, CodingKey {
         case properties
         case geometry
@@ -120,12 +128,6 @@ struct Earthquake: Decodable, Identifiable {
         let coordinates = try geometry.decode([Float].self, forKey: .coordinates)
         location = Coordinates(longitude: coordinates[0], latitude: coordinates[1], depth: coordinates[2])
     }
-}
-
-struct Coordinates: Codable {
-    var longitude: Float
-    var latitude: Float
-    var depth: Float
 }
 
 struct EarthquakesList: Decodable {

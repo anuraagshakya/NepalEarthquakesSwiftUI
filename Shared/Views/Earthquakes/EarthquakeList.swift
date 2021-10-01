@@ -23,6 +23,6 @@ struct EarthquakeList: View {
 
 struct EarthquakeList_Previews: PreviewProvider {
     static var previews: some View {
-        EarthquakeList(earthquakes: ModelData().earthquakes)
+        EarthquakeList(earthquakes: ModelData.debug.earthquakes)
     }
 }
