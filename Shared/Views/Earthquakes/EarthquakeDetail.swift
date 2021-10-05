@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EarthquakeDetail: View {
+    @State private var showingWebDetail = false
     var earthquake: Earthquake
     
     var body: some View {
@@ -48,8 +49,13 @@ struct EarthquakeDetail: View {
                 .padding(.top, 16)
                 
                 if let url = URL(string: earthquake.urlString) {
-                    Link("Details", destination: url)
-                        .padding(.top, 16)
+                    Button("Show details") {
+                        showingWebDetail.toggle()
+                    }
+                    .sheet(isPresented: $showingWebDetail) {
+                        WebSheetView(request: URLRequest(url: url))
+                    }
+                    .padding(.top, 4)
                 }
 
             }
