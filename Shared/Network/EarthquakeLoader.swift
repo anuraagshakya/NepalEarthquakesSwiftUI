@@ -51,7 +51,7 @@ final class EarthquakeLoader {
             }
             
             do {
-                let list = try JSONDecoder().decode(EarthquakesList.self, from: safeData)
+                let list = try JSONDecoder().decode(EarthquakeReseponse.self, from: safeData)
                 completion(.success(list.features))
             } catch {
                 completion(.failure(error))

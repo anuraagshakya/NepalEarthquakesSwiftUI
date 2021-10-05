@@ -130,7 +130,7 @@ extension Earthquake: Decodable {
     }
 }
 
-struct EarthquakesList: Decodable {
+struct EarthquakeReseponse: Decodable {
     let features: [Earthquake]
 
     enum CodingKeys: String, CodingKey {
