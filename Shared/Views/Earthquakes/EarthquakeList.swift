@@ -20,8 +20,9 @@ struct EarthquakeList: View {
     }
     
     private var filteredAndSortedEarthquakes: [Earthquake] {
-        var result = modelData.state.earthquakes.filter { filterRule?($0) ?? true }
-        result = result.sorted { sortRule?($0, $1) ?? true }
+        var result = modelData.state.earthquakes
+        if let safeFilterRule = filterRule { result = result.filter { safeFilterRule($0) } }
+        if let safeSortRule = sortRule { result = result.sorted { safeSortRule($0, $1) } }
         return result
     }
     

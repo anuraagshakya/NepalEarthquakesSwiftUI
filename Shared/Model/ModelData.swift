@@ -39,7 +39,8 @@ final class ModelData: ObservableObject {
             case .success(let loadedEarthquakes):
                 DispatchQueue.main.async { [weak self] in
                     let nepalEarthquakes = loadedEarthquakes.filterForNepal()
-                    self?.state = .loaded(nepalEarthquakes)
+                    let nepalEarthquakesSortedByRecency = nepalEarthquakes.sorted { $0.date > $1.date }
+                    self?.state = .loaded(nepalEarthquakesSortedByRecency)
                 }
             case .failure(let error):
                 DispatchQueue.main.async { [weak self] in
