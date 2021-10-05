@@ -14,8 +14,7 @@ struct CategoryHome: View {
         NavigationView {
             List {
                 ForEach(Earthquake.Category.allCasesSorted, id: \.self) { category in
-                    NavigationLink(destination: EarthquakeList(
-                                    earthquakes: modelData.earthquakes.filter { $0.category == category })
+                    NavigationLink(destination: EarthquakeList(filterRule: { $0.category == category })
                                     .navigationTitle(category.rawValue)
                     ) {
                         CategoryRow(category: category)
@@ -30,6 +29,6 @@ struct CategoryHome: View {
 struct CategoryHome_Previews: PreviewProvider {
     static var previews: some View {
         CategoryHome()
-            .environmentObject(ModelData.debug)
+            .environmentObject(ModelData.withMockedEarthquakes)
     }
 }

@@ -8,31 +8,83 @@
 import Combine
 import Foundation
 
+enum AppState {
+    case loading
+    case failed(Error)
+    case loaded([Earthquake])
+    
+    var earthquakes: [Earthquake] {
+        switch self {
+        case .loading, .failed:
+            return []
+        case .loaded(let earthquakes):
+            return earthquakes
+        }
+    }
+}
+
 final class ModelData: ObservableObject {
-    var earthquakeLoader: EarthquakeLoader
-
-    @Published var earthquakes: [Earthquake] = []
-
-    static var debug = ModelData(earthquakeLoader: EarthquakeLoaderDebug())
+    @Published var state: AppState
+    
+    var earthquakeLoader = EarthquakeLoader()
         
-    init(earthquakeLoader: EarthquakeLoader = EarthquakeLoaderDefault()) {
-        self.earthquakeLoader = earthquakeLoader
+    init(state: AppState = .loaded([])) {
+        self.state = state
+    }
+    
+    func load() {
+        self.state = .loading
         earthquakeLoader.loadEarthquakes { result in
             switch result {
             case .success(let loadedEarthquakes):
                 DispatchQueue.main.async { [weak self] in
                     let nepalEarthquakes = loadedEarthquakes.filter { $0.place.contains("Nepal") }
-                    self?.earthquakes = nepalEarthquakes
+                    self?.state = .loaded(nepalEarthquakes)
                 }
             case .failure(let error):
-                print(error)
+                DispatchQueue.main.async { [weak self] in
+                    self?.state = .failed(error)
+                }
             }
         }
     }
     
     var categories: [String: [Earthquake]] {
-        Dictionary(grouping: earthquakes) {
+        Dictionary(grouping: state.earthquakes) {
             $0.category.rawValue
         }
     }
+}
+
+// Extension that simplifies mocking the model for SwiftUI previews
+extension ModelData {
+    
+    static var withMockedEarthquakes: ModelData {
+        ModelData(state: .loaded(mockEarthquakes))
+    }
+    
+    private static var mockEarthquakes: [Earthquake] {
+        Self.loadFromFile("earthquakeData.json")
+    }
+    
+    private static func loadFromFile<T: Decodable>(_ filename: String) -> T {
+        let data: Data
+        
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
+            fatalError("Couldn't find file named \(filename)")
+        }
+        
+        do {
+            try data = Data(contentsOf: file)
+        } catch {
+            fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+        }
+        
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        }
+    }
+    
 }

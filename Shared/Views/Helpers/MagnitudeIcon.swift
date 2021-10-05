@@ -23,6 +23,6 @@ struct MagnitudeIcon: View {
 
 struct MagnitudeIcon_Previews: PreviewProvider {
     static var previews: some View {
-        MagnitudeIcon(earthquake: ModelData().earthquakes[0])
+        MagnitudeIcon(earthquake: ModelData.withMockedEarthquakes.state.earthquakes[0])
     }
 }

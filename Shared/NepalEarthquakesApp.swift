@@ -9,7 +9,12 @@ import SwiftUI
 
 @main
 struct NepalEarthquakesApp: App {
-    @StateObject private var modelData = ModelData()
+    // This probably is not the proper place to call the `load` function
+    @StateObject private var modelData: ModelData = {
+        let modelData = ModelData()
+        modelData.load()
+        return modelData
+    }()
     
     var body: some Scene {
         WindowGroup {
@@ -17,4 +22,5 @@ struct NepalEarthquakesApp: App {
                 .environmentObject(modelData)
         }
     }
+
 }

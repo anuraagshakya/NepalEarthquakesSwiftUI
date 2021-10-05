@@ -60,6 +60,6 @@ struct EarthquakeDetail: View {
 
 struct EarthquakeDetail_Previews: PreviewProvider {
     static var previews: some View {
-        EarthquakeDetail(earthquake: ModelData.debug.earthquakes[0])
+        EarthquakeDetail(earthquake: ModelData.withMockedEarthquakes.state.earthquakes[0])
     }
 }

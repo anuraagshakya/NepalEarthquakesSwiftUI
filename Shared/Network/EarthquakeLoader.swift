@@ -7,12 +7,7 @@
 
 import Foundation
 
-protocol EarthquakeLoader {
-    var isLoading: Bool { get }
-    func loadEarthquakes(completion: @escaping ((Result<[Earthquake], Error>) -> Void))
-}
-
-final class EarthquakeLoaderDefault: EarthquakeLoader {
+final class EarthquakeLoader {
     private var urlSession = URLSession.shared
     
     private var url: URL {
@@ -43,18 +38,9 @@ final class EarthquakeLoaderDefault: EarthquakeLoader {
             }
         }
     }
-    
-    var isLoading = false
-    
+        
     func loadEarthquakes(completion: @escaping ((Result<[Earthquake], Error>) -> Void)) {
-        isLoading = true
-        urlSession.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else { return }
-            
-            defer {
-                self.isLoading = false
-            }
-            
+        urlSession.dataTask(with: url) { data, response, error in
             if let safeError = error {
                 completion(.failure(safeError))
             }
@@ -71,34 +57,5 @@ final class EarthquakeLoaderDefault: EarthquakeLoader {
                 completion(.failure(error))
             }
         }.resume()
-    }
-}
-
-struct EarthquakeLoaderDebug: EarthquakeLoader {
-    var isLoading = false
-    
-    func loadEarthquakes(completion: @escaping ((Result<[Earthquake], Error>) -> Void)) {
-        let earthquakes: [Earthquake] = load("earthquakeData.json")
-        completion(.success(earthquakes))
-    }
-    
-    private func load<T: Decodable>(_ filename: String) -> T {
-        let data: Data
-        
-        guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
-            fatalError("Couldn't find file named \(filename)")
-        }
-        
-        do {
-            try data = Data(contentsOf: file)
-        } catch {
-            fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-        }
-        
-        do {
-            return try JSONDecoder().decode(T.self, from: data)
-        } catch {
-            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
-        }
     }
 }

@@ -132,9 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				6001BD2C27009EA100349A9F /* NepalEarthquakesApp.swift */,
-				6045760827074043006CB562 /* EarthquakeLoader.swift */,
 				6001BD942700A5FD00349A9F /* Model */,
 				6001BD952700A60900349A9F /* Views */,
+				6045760C270762B7006CB562 /* Network */,
 				6001BD962700A63100349A9F /* Resources */,
 			);
 			path = Shared;
@@ -234,6 +234,14 @@
 				6001BD9B2700A73300349A9F /* EarthquakeDetail.swift */,
 			);
 			path = Earthquakes;
+			sourceTree = "<group>";
+		};
+		6045760C270762B7006CB562 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6045760827074043006CB562 /* EarthquakeLoader.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		607725E3270467B10009A750 /* Categories */ = {
