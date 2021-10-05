@@ -59,9 +59,9 @@
 		6001BD2C27009EA100349A9F /* NepalEarthquakesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NepalEarthquakesApp.swift; sourceTree = "<group>"; };
 		6001BD2D27009EA100349A9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6001BD2E27009EA400349A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6001BD3327009EA400349A9F /* NepalEarthquakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NepalEarthquakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6001BD3327009EA400349A9F /* Nepquakes Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nepquakes Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6001BD3627009EA400349A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6001BD3B27009EA400349A9F /* NepalEarthquakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NepalEarthquakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6001BD3B27009EA400349A9F /* Nepal Earthquakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nepal Earthquakes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6001BD3D27009EA400349A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6001BD3E27009EA400349A9F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		6001BD4327009EA400349A9F /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,8 +145,8 @@
 		6001BD3427009EA400349A9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6001BD3327009EA400349A9F /* NepalEarthquakes.app */,
-				6001BD3B27009EA400349A9F /* NepalEarthquakes.app */,
+				6001BD3327009EA400349A9F /* Nepquakes Debug.app */,
+				6001BD3B27009EA400349A9F /* Nepal Earthquakes.app */,
 				6001BD4327009EA400349A9F /* Tests iOS.xctest */,
 				6001BD4E27009EA400349A9F /* Tests macOS.xctest */,
 			);
@@ -259,9 +259,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6001BD3227009EA400349A9F /* NepalEarthquakes (iOS) */ = {
+		6001BD3227009EA400349A9F /* Nepquakes (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6001BD5D27009EA400349A9F /* Build configuration list for PBXNativeTarget "NepalEarthquakes (iOS)" */;
+			buildConfigurationList = 6001BD5D27009EA400349A9F /* Build configuration list for PBXNativeTarget "Nepquakes (iOS)" */;
 			buildPhases = (
 				6001BD2F27009EA400349A9F /* Sources */,
 				6001BD3027009EA400349A9F /* Frameworks */,
@@ -271,9 +271,9 @@
 			);
 			dependencies = (
 			);
-			name = "NepalEarthquakes (iOS)";
+			name = "Nepquakes (iOS)";
 			productName = "NepalEarthquakes (iOS)";
-			productReference = 6001BD3327009EA400349A9F /* NepalEarthquakes.app */;
+			productReference = 6001BD3327009EA400349A9F /* Nepquakes Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6001BD3A27009EA400349A9F /* NepalEarthquakes (macOS) */ = {
@@ -290,7 +290,7 @@
 			);
 			name = "NepalEarthquakes (macOS)";
 			productName = "NepalEarthquakes (macOS)";
-			productReference = 6001BD3B27009EA400349A9F /* NepalEarthquakes.app */;
+			productReference = 6001BD3B27009EA400349A9F /* Nepal Earthquakes.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6001BD4227009EA400349A9F /* Tests iOS */ = {
@@ -367,7 +367,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6001BD3227009EA400349A9F /* NepalEarthquakes (iOS) */,
+				6001BD3227009EA400349A9F /* Nepquakes (iOS) */,
 				6001BD3A27009EA400349A9F /* NepalEarthquakes (macOS) */,
 				6001BD4227009EA400349A9F /* Tests iOS */,
 				6001BD4D27009EA400349A9F /* Tests macOS */,
@@ -469,7 +469,7 @@
 /* Begin PBXTargetDependency section */
 		6001BD4527009EA400349A9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6001BD3227009EA400349A9F /* NepalEarthquakes (iOS) */;
+			target = 6001BD3227009EA400349A9F /* Nepquakes (iOS) */;
 			targetProxy = 6001BD4427009EA400349A9F /* PBXContainerItemProxy */;
 		};
 		6001BD5027009EA400349A9F /* PBXTargetDependency */ = {
@@ -531,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -585,7 +585,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -598,6 +598,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YH9MLLYLBL;
 				ENABLE_PREVIEWS = YES;
@@ -608,7 +609,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhunte.NepalEarthquakes;
-				PRODUCT_NAME = NepalEarthquakes;
+				PRODUCT_NAME = "Nepquakes Debug";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -620,6 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YH9MLLYLBL;
 				ENABLE_PREVIEWS = YES;
@@ -630,7 +632,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhunte.NepalEarthquakes;
-				PRODUCT_NAME = NepalEarthquakes;
+				PRODUCT_NAME = Nepquakes;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -657,7 +659,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhunte.NepalEarthquakes;
-				PRODUCT_NAME = NepalEarthquakes;
+				PRODUCT_NAME = "Nepal Earthquakes";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -682,7 +684,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhunte.NepalEarthquakes;
-				PRODUCT_NAME = NepalEarthquakes;
+				PRODUCT_NAME = "Nepal Earthquakes";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -789,7 +791,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6001BD5D27009EA400349A9F /* Build configuration list for PBXNativeTarget "NepalEarthquakes (iOS)" */ = {
+		6001BD5D27009EA400349A9F /* Build configuration list for PBXNativeTarget "Nepquakes (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6001BD5E27009EA400349A9F /* Debug */,
