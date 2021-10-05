@@ -53,7 +53,16 @@ struct EarthquakeDetail: View {
                         showingWebDetail.toggle()
                     }
                     .sheet(isPresented: $showingWebDetail) {
-                        WebSheetView(request: URLRequest(url: url))
+                        NavigationView {
+                            WebSheetView(request: URLRequest(url: url))
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarTrailing) {
+                                        Button("Done") {
+                                            showingWebDetail.toggle()
+                                        }
+                                    }
+                                }
+                        }
                     }
                     .padding(.top, 4)
                 }
