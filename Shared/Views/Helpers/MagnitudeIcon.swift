@@ -17,7 +17,6 @@ struct MagnitudeIcon: View {
             .padding()
             .background(earthquake.category.color)
             .clipShape(Circle())
-            .shadow(radius: 10)
     }
 }
 
