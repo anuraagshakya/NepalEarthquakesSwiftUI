@@ -38,7 +38,7 @@ final class ModelData: ObservableObject {
             switch result {
             case .success(let loadedEarthquakes):
                 DispatchQueue.main.async { [weak self] in
-                    let nepalEarthquakes = loadedEarthquakes.filter { $0.place.contains("Nepal") }
+                    let nepalEarthquakes = loadedEarthquakes.filterForNepal()
                     self?.state = .loaded(nepalEarthquakes)
                 }
             case .failure(let error):
@@ -56,11 +56,17 @@ final class ModelData: ObservableObject {
     }
 }
 
+private extension Array where Element == Earthquake {
+    func filterForNepal() -> [Earthquake] {
+        filter { $0.place.contains("Nepal") }
+    }
+}
+
 // Extension that simplifies mocking the model for SwiftUI previews
 extension ModelData {
     
     static var withMockedEarthquakes: ModelData {
-        ModelData(state: .loaded(mockEarthquakes))
+        ModelData(state: .loaded(mockEarthquakes.filterForNepal()))
     }
     
     private static var mockEarthquakes: [Earthquake] {
