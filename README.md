@@ -6,3 +6,7 @@ I wrote this app in order to try out **SwiftUI** and **Combine**. It closely fol
 
 |![alt text](iOS/Screenshots/Categories.png)|![alt text](iOS/Screenshots/Lists.png)|![alt text](iOS/Screenshots/List.png)|![alt text](iOS/Screenshots/Detail.png)|
 |-|-|-|-|
+
+### References
+
+Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/).

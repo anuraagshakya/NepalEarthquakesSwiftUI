@@ -26,7 +26,7 @@ enum AppState {
 final class ModelData: ObservableObject {
     @Published var state: AppState
     
-    var earthquakeLoader = EarthquakeLoader()
+    private var earthquakeLoader = EarthquakeLoader()
         
     init(state: AppState = .loaded([])) {
         self.state = state
