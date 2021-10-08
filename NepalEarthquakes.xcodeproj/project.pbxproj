@@ -59,7 +59,7 @@
 		6001BD2C27009EA100349A9F /* NepalEarthquakesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NepalEarthquakesApp.swift; sourceTree = "<group>"; };
 		6001BD2D27009EA100349A9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6001BD2E27009EA400349A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6001BD3327009EA400349A9F /* Nepquakes Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nepquakes Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6001BD3327009EA400349A9F /* Nepquakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nepquakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6001BD3627009EA400349A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6001BD3B27009EA400349A9F /* Nepal Earthquakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nepal Earthquakes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6001BD3D27009EA400349A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		6001BD3427009EA400349A9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6001BD3327009EA400349A9F /* Nepquakes Debug.app */,
+				6001BD3327009EA400349A9F /* Nepquakes.app */,
 				6001BD3B27009EA400349A9F /* Nepal Earthquakes.app */,
 				6001BD4327009EA400349A9F /* Tests iOS.xctest */,
 				6001BD4E27009EA400349A9F /* Tests macOS.xctest */,
@@ -273,7 +273,7 @@
 			);
 			name = "Nepquakes (iOS)";
 			productName = "NepalEarthquakes (iOS)";
-			productReference = 6001BD3327009EA400349A9F /* Nepquakes Debug.app */;
+			productReference = 6001BD3327009EA400349A9F /* Nepquakes.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6001BD3A27009EA400349A9F /* NepalEarthquakes (macOS) */ = {
@@ -609,7 +609,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhunte.NepalEarthquakes;
-				PRODUCT_NAME = "Nepquakes Debug";
+				PRODUCT_NAME = Nepquakes;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
